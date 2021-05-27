@@ -12,8 +12,6 @@ function computerPlay() {
   }
 }
 
-let computerChoice = computerPlay();
-
 function playerSelection() {
   let playerInput = prompt(
     "Choose rock, paper or scissors and type it in the field below",
@@ -21,15 +19,24 @@ function playerSelection() {
   );
   return playerInput.toLowerCase();
 }
+round(playerSelection, computerPlay);
 
-let playerChoice = playerSelection();
+/* func bar () {}
+   func foo () {}
+   func bafo (ba, fo) {
+   ba = ba(); //
+   fo = fo(); // falls es eine Variable sein soll. Ansonsten reicht auch nur ba(); fo();
+   }
+*/
 
 function round(player, computer) {
+  player = player(); //muss player = player(); sein, da die variable sonst nicht als Parameter anerkannt wird.
+  computer = computer();
   switch (true) {
     case computer == player:
       console.log("It's a tie!");
       break;
-    case computer == "rock" && playerSelection == "paper":
+    case computer == "rock" && player == "paper":
       console.log("Player wins!");
       break;
     case computer == "rock" && player == "scissors":
@@ -49,4 +56,3 @@ function round(player, computer) {
       break;
   }
 }
-round(playerChoice, computerChoice);
