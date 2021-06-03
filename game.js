@@ -4,18 +4,18 @@ let computerScore = 0;
 
 for (let i = 0; i < 5; i++) {
   game(playerSelection, computerPlay);
-
-  function game(player, computer) {
-    player = player();
-    computer = computer();
-    let roundScore = playRound(player, computer);
-    gameScoreFunc(roundScore);
-    console.log(
-      `${roundScore}. Player: ${playerScore} | Computer: ${computerScore}`
-    );
-  }
 }
 
+function game(player, computer) {
+  player = player(); // get playerchoice
+  computer = computer(); //get computerchoice
+  let roundScore = playRound(player, computer);
+  gameScoreFunc(roundScore); //point increasement
+  console.log(
+    `${roundScore}. Player: ${playerScore} | Computer: ${computerScore}`
+  );
+}
+//get player choice:
 function playerSelection() {
   let playerInputCaseSensitive = prompt(
     "Choose rock, paper or scissors and type it in the field below",
@@ -39,7 +39,7 @@ function playerSelection() {
     return playerInput;
   }
 }
-
+//get computer choice based on a random number between 1 and 3:
 function computerPlay() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
 
@@ -51,7 +51,7 @@ function computerPlay() {
     return "paper";
   }
 }
-
+//play one round and return string containing winner,score:
 function playRound(player, computer) {
   switch (true) {
     case computer == player:
@@ -76,7 +76,7 @@ function playRound(player, computer) {
       return "You lose! Paper beats rock!";
   }
 }
-
+// increases points of the whole game (if necessary):
 function gameScoreFunc(roundScore) {
   if (
     roundScore === "You win! Paper beats rock!" ||
@@ -92,19 +92,19 @@ function gameScoreFunc(roundScore) {
     return computerScore;
   }
 }
-
+// console.logs final result and winner:
 let gameResult = () => {
   if (playerScore > computerScore) {
     console.log(
-      `The final result is Player: ${playerScore} | Computer: ${computerScore}. You win!`
+      `The final result is [Player]: ${playerScore} | [Computer]: ${computerScore}. You win!`
     );
   } else if (playerScore == computerScore) {
     console.log(
-      `The final result is Player: ${playerScore} | Computer: ${computerScore}. The game ends in a tie!`
+      `The final result is [Player]: ${playerScore} | [Computer]: ${computerScore}. The game ends in a tie!`
     );
   } else {
     console.log(
-      `The final result is Player: ${playerScore} | Computer: ${computerScore}. You lose!`
+      `The final result is [Player]: ${playerScore} | [Computer]: ${computerScore}. You lose!`
     );
   }
 };
