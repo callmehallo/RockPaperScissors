@@ -9,9 +9,10 @@ for (let i = 0; i < 5; i++) {
     player = player();
     computer = computer();
     let roundScore = playRound(player, computer);
-    console.log(roundScore);
     gameScoreFunc(roundScore);
-    console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
+    console.log(
+      `${roundScore}. Player: ${playerScore} | Computer: ${computerScore}`
+    );
   }
 }
 
@@ -27,9 +28,14 @@ function playerSelection() {
     playerInput !== "rock"
   ) {
     alert(
-      "Don't you know the rules? Just 'rock', 'paper' or 'scissors' is allowed!"
+      "Don't you know the rules? Just 'rock', 'paper' or 'scissors' is allowed! Try again"
     );
-  } else {
+    return playerSelection();
+  } else if (
+    playerInput == "scissors" ||
+    playerInput == "paper" ||
+    playerInput == "rock"
+  ) {
     return playerInput;
   }
 }
@@ -79,6 +85,8 @@ function gameScoreFunc(roundScore) {
   ) {
     ++playerScore;
     return playerScore;
+  } else if (roundScore == "It's a tie!") {
+    return playerScore;
   } else {
     ++computerScore;
     return computerScore;
@@ -90,10 +98,14 @@ let gameResult = () => {
     console.log(
       `The final result is Player: ${playerScore} | Computer: ${computerScore}. You win!`
     );
+  } else if (playerScore == computerScore) {
+    console.log(
+      `The final result is Player: ${playerScore} | Computer: ${computerScore}. The game ends in a tie!`
+    );
   } else {
     console.log(
       `The final result is Player: ${playerScore} | Computer: ${computerScore}. You lose!`
     );
   }
 };
-gameResult;
+gameResult();
