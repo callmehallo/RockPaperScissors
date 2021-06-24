@@ -1,0 +1,11 @@
+erledigt:
+icons als buttons 
+fontawesome installieren 
+css transform benutzen fuer die icons zum groesser skalieren
+
+nicht erledigt:
+kleinen Timer einstellen, damit man kurz warten muss bis man die computerwahl sieht 
+computer icons werden auch hochskaliert 
+computericons ausgegraut damit man weiss dass man es nicht auswaehlen kann
+header schoener gestalten
+

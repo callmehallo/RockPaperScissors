@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content= "text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="assets/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+  <div class="invert">
+  <div class="con">
+      
+    <div class="header" id="RH"><h1>
+      ROCK  PAPER  SCISSORS
+    </h1></div>
+    
+    <div class="ui">
+      
+      <div class="player cpui">
+        <div class="border">
+        <div class="name" id="pName"></div>
+        <div class="score" id="pScore">
+        </div>
+        </div>
+        <div class="uiWrapper" id="playerUI">
+          
+
+          <div class="icons" id="pIcons" style="font-size: 1rem;">
+            <button class="btn" id="rock"> <i class="far fa-hand-rock  fa-lg"></i></button>
+            <button class="btn" id="paper"> <i class="far fa-hand-paper fa-lg"></i></button>
+            <button class="btn" id="scissors"> <i class="far fa-hand-scissors fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="com cpui">
+        <div class="border">
+        <div class="name" id="cName">
+          <p>COMPUTER:</p>
+        </div>
+        <div class="score" id="cScore">
+          </div>
+        </div>
+        <div class="uiWrapper" id="comUI">
+          <div class="icons" id="cIcons" style="font-size: 1rem;">
+            <button class="nobtn"> <i class="far fa-hand-rock  fa-lg"></i></button>
+            <button class="nobtn"> <i class="far fa-hand-paper fa-lg"></i></button>
+            <button class="nobtn"> <i
+                class="far fa-hand-scissors fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text"></div>
+    
+  </div>
+
+
+  <script src="UI.js">
+  </script>
+  </div>
+</body>
+
+</html>
